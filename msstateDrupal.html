@@ -63,30 +63,8 @@
     <script src="//cdn01.its.msstate.edu/e/modernizr/2.8.3/modernizr.min.js"></script>
     <script src="js/scripts.js"></script>
 
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
 
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-analytics.js"></script>
-
-    <script>
-    // Your web app's Firebase configuration
-    var firebaseConfig = {
-        apiKey: "AIzaSyB-tSkzU4e8wq9L5YLEQfDryKjVsvocoN4",
-        authDomain: "senior-project-5703b.firebaseapp.com",
-        databaseURL: "https://senior-project-5703b.firebaseio.com",
-        projectId: "senior-project-5703b",
-        storageBucket: "senior-project-5703b.appspot.com",
-        messagingSenderId: "45119898699",
-        appId: "1:45119898699:web:772bd7fbccabbcc6fdb9ce",
-        measurementId: "G-PRRQH9JNSR"
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
-    </script>
-    <script type="text/javascript" src="search.js"></script>
+    <script type="text/javascript" src="MSUsearch.js"></script>
 
 </head>
 
@@ -262,22 +240,21 @@
                                                                     Chronicles</h2>
                                                                 <div class="row search hidden-xs">
                                                                     <div class="col-sm-12">
-                                                                        <form class="search-form" role="search"
-                                                                            action="" method="get">
-                                                                            <label class="sr-only"
-                                                                                for="search-terms">Search
-                                                                                MSSTATE</label>
-                                                                            <input id="search-terms"
-                                                                                class="form-control" name="terms"
-                                                                                placeholder="Search Repertorium Chronicarum"
-                                                                                type="text">
-                                                                            <button class="form-control" type="submit"
-                                                                                title="Search" style="display:inline;">
-                                                                                <i class="glyphicon glyphicon-search">
-                                                                                    <span class="sr-only">Search</span>
-                                                                                </i>
-                                                                            </button>
-                                                                        </form>
+                                                                        
+                                                                        <label class="sr-only"
+                                                                            for="search-terms">Search
+                                                                            MSSTATE</label>
+                                                                        <input id="SearchDB"
+                                                                            class="form-control" name="terms"
+                                                                            placeholder="Search Repertorium Chronicarum"
+                                                                            type="text">
+                                                                        <button class="form-control" onclick="search()"
+                                                                            title="Search" style="display:inline;">
+                                                                            <i class="glyphicon glyphicon-search">
+                                                                                <span class="sr-only">Search</span>
+                                                                            </i>
+                                                                        </button>
+                                                                        
                                                                     </div>
                                                                 </div>
                                                             </div>
