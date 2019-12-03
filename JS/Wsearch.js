@@ -3,7 +3,9 @@ function search(){
     var req = new XMLHttpRequest();
     req.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200){
-            alert(this.responseText);
+            document.getElementById("searchbox").value = val;
+            document.getElementById("resultsTable").innerHTML = this.responseText
+            addRowHandlers();
         }
     };
     req.open("GET", "http://localhost/seniorproject/php/theWSearch.php?q=" + val, true);
@@ -15,8 +17,29 @@ function redir(){
     window.location = "http://localhost/seniorproject/Wresults.html";
 }
 
-window.onload = function(){
+function addRowHandlers() {
+    var row = document.getElementById("resTable").rows;
+    for (i = 0; i < row.length; i++) {
+        row[i].onclick = function(){ return function(){
+            var slot = this.cells[0];
+            viewDetails(slot.innerHTML);
+        };}(row[i]);
+    }
+}
 
-    this.search();
+function viewDetails(collTitle){
+    localStorage.setItem("item", collTitle);
+    window.location = "http://localhost/seniorproject/Wdetails.html";
+}
 
+function displayDetails(){
+    var record = localStorage.getItem("item");
+    var req = new XMLHttpRequest();
+    req.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200){
+            document.getElementById("details").innerHTML = this.responseText;
+        }
+    };
+    req.open("GET", "http://localhost/seniorproject/php/theWDetails.php?q=" + record, true);
+    req.send();
 }
