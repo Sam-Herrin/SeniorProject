@@ -48,25 +48,29 @@ Notes varchar(255)
 )";
 $conn->query($table);
 
-$query = "INSERT INTO msstate(LibraryName,City,Country,Website,ManuscriptName,Author,BirthDate,DeathDate,Notes,OorC) VALUES(1,'Burgerbibliothek','Bern','Switzerland',NULL,'Epitoma de Pontificibus Romanis','Abbo Floriacensis',945,1004,'None','Original');";
+$query = "INSERT INTO msstate(ID,LibraryName,City,Country,Website,ManuscriptName,Author,BirthDate,DeathDate,Notes,OorC) VALUES(1,'Burgerbibliothek','Bern','Switzerland',NULL,'Epitoma de Pontificibus Romanis','Abbo Floriacensis',945,1004,'None','Original');";
 $conn->query($query);
-$query = "INSERT INTO msstate(LibraryName,City,Country,Website,ManuscriptName,Author,BirthDate,DeathDate,Notes,OorC) VALUES(2,'Universiteitsbibiotheek','Leiden','Netherlands',NULL,'Epitoma de Pontificibus Romanis','Abbo Floriacensis',945,1004,'None','Copy');";
+$query = "INSERT INTO msstate(ID,LibraryName,City,Country,Website,ManuscriptName,Author,BirthDate,DeathDate,Notes,OorC) VALUES(2,'Universiteitsbibiotheek','Leiden','Netherlands',NULL,'Epitoma de Pontificibus Romanis','Abbo Floriacensis',945,1004,'None','Copy');";
 $conn->query($query);
-$query = "INSERT INTO msstate(LibraryName,City,Country,Website,ManuscriptName,Author,BirthDate,DeathDate,Notes,OorC) VALUES(3,'Bibliothèque Nationale','Paris','France',NULL,'Bella Parisiacae urbis','Abbo of St. Germain',850,925,'None','Copy');";
+$query = "INSERT INTO msstate(ID,LibraryName,City,Country,Website,ManuscriptName,Author,BirthDate,DeathDate,Notes,OorC) VALUES(3,'Bibliothèque Nationale','Paris','France',NULL,'Bella Parisiacae urbis','Abbo of St. Germain',850,925,'None','Copy');";
 $conn->query($query);
-$query = "INSERT INTO msstate(LibraryName,City,Country,Website,ManuscriptName,Author,BirthDate,DeathDate,Notes,OorC) VALUES(4,'Österreichische Nationalbibliothek','Wien','Austria',NULL,'Abbreviatio Chronicae a Mundo Condito usque ad Carolum Magnum','Unknown',NULL,NULL,'None','Copy');";
+$query = "INSERT INTO msstate(ID,LibraryName,City,Country,Website,ManuscriptName,Author,BirthDate,DeathDate,Notes,OorC) VALUES(4,'Österreichische Nationalbibliothek','Wien','Austria',NULL,'Abbreviatio Chronicae a Mundo Condito usque ad Carolum Magnum','Unknown',NULL,NULL,'None','Copy');";
+if ($conn->query($query) === TRUE) {
+    echo "Data Inserted into MSU Table";
+} else {
+    echo "Error Inserting data into Table: " . $conn->error;
+}
+$query = "INSERT INTO msstate(ID,LibraryName,City,Country,Website,ManuscriptName,Author,BirthDate,DeathDate,Notes,OorC) VALUES(5,'Österreichische Nationalbibliothek','Wien','Austria',NULL,'Abbreviatio Chronicae ab Adamo usque ad Annum 809','Unknown',NULL,NULL,'None','Copy');";
 $conn->query($query);
-$query = "INSERT INTO msstate(LibraryName,City,Country,Website,ManuscriptName,Author,BirthDate,DeathDate,Notes,OorC) VALUES(5,'Österreichische Nationalbibliothek','Wien','Austria',NULL,'Abbreviatio Chronicae ab Adamo usque ad Annum 809','Unknown',NULL,NULL,'None','Copy');";
+$query = "INSERT INTO msstate(ID,LibraryName,City,Country,Website,ManuscriptName,Author,BirthDate,DeathDate,Notes,OorC) VALUES(6,'Bibliothèque Nationale','Paris','France',NULL,'Abbreviatio Chronicae Bedanae','Unknown',NULL,NULL,'None','Copy');";
 $conn->query($query);
-$query = "INSERT INTO msstate(LibraryName,City,Country,Website,ManuscriptName,Author,BirthDate,DeathDate,Notes,OorC) VALUES(6,'Bibliothèque Nationale','Paris','France',NULL,'Abbreviatio Chronicae Bedanae','Unknown',NULL,NULL,'None','Copy');";
+$query = "INSERT INTO msstate(ID,LibraryName,City,Country,Website,ManuscriptName,Author,BirthDate,DeathDate,Notes,OorC) VALUES(7,'British Library','London','England',NULL,'Abbreviatio de Gestis Normannorum ad Gulielmum I Regem Angliae','Unknown',NULL,NULL,'None','Copy');";
 $conn->query($query);
-$query = "INSERT INTO msstate(LibraryName,City,Country,Website,ManuscriptName,Author,BirthDate,DeathDate,Notes,OorC) VALUES(7,'British Library','London','England',NULL,'Abbreviatio de Gestis Normannorum ad Gulielmum I Regem Angliae','Unknown',NULL,NULL,'None','Copy');";
+$query = "INSERT INTO msstate(ID,LibraryName,City,Country,Website,ManuscriptName,Author,BirthDate,DeathDate,Notes,OorC) VALUES(8,'Bibliothèque Nationale','Paris','France',NULL,'Abbreviatio Gestorum Regum Francorum (Historia Francorum Monasterii Sancti Dionysii)','Unknown',NULL,NULL,'None','Copy');";
 $conn->query($query);
-$query = "INSERT INTO msstate(LibraryName,City,Country,Website,ManuscriptName,Author,BirthDate,DeathDate,Notes,OorC) VALUES(8,'Bibliothèque Nationale','Paris','France',NULL,'Abbreviatio Gestorum Regum Francorum (Historia Francorum Monasterii Sancti Dionysii)','Unknown',NULL,NULL,'None','Copy');";
+$query = "INSERT INTO msstate(ID,LibraryName,City,Country,Website,ManuscriptName,Author,BirthDate,DeathDate,Notes,OorC) VALUES(9,'Newberry Library','Chicago','United States of America',NULL,'Abbreviationes Chronicorum','Unknown',NULL,NULL,'None','Copy');";
 $conn->query($query);
-$query = "INSERT INTO msstate(LibraryName,City,Country,Website,ManuscriptName,Author,BirthDate,DeathDate,Notes,OorC) VALUES(9,'Newberry Library','Chicago','United States of America',NULL,'Abbreviationes Chronicorum','Unknown',NULL,NULL,'None','Copy');";
-$conn->query($query);
-$query = "INSERT INTO msstate(LibraryName,City,Country,Website,ManuscriptName,Author,BirthDate,DeathDate,Notes,OorC) VALUES(10,'Universitäts- und Landesbibliothek','Halle','Germany',NULL,'Bita Heinrici II Imperatoris','Adalboldus Utraiectensis',695,1580,'None','Original');";
+$query = "INSERT INTO msstate(ID,LibraryName,City,Country,Website,ManuscriptName,Author,BirthDate,DeathDate,Notes,OorC) VALUES(10,'Universitäts- und Landesbibliothek','Halle','Germany',NULL,'Bita Heinrici II Imperatoris','Adalboldus Utraiectensis',695,1580,'None','Original');";
 $conn->query($query);
 
 $query = "INSERT INTO theW(ID,Institution,CollectionTitle,InstCollNum,InclusiveDates,Extent,SubjectHeadings,Descriptions,Link,Notes) VALUES (1,'Jackson State University - Margaret Walker Center','Adrienne, Alberta Collection','AF 043','1970s','1 linear foot','African American History','This collection consists of printed materials, newspapers, and magazines detailing the events that took place during the 1970s at Jackson State College. It also contains humanities course teaching material.','http://www.jsums.edu/margaretwalkercenter/files/2013/03/adrienne.pdf',NULL);";
@@ -286,11 +290,6 @@ $conn->query($query);
 $query = "INSERT INTO theW(ID,Institution,CollectionTitle,InstCollNum,InclusiveDates,Extent,SubjectHeadings,Descriptions,Link,Notes) VALUES (108,'Delta State University - Charles W. Capps, Jr. Archives and Museum','Varner, Lynn and Barbara','OH 383',NULL,NULL,'Historic Neighborhoods Oral Histories',NULL,NULL,NULL);";
 $conn->query($query);
 $query = "INSERT INTO theW(ID,Institution,CollectionTitle,InstCollNum,InclusiveDates,Extent,SubjectHeadings,Descriptions,Link,Notes) VALUES (109,'Delta State University - Charles W. Capps, Jr. Archives and Museum','Wheeler, Cherry and Nott','OH 375',NULL,NULL,'Historic Neighborhoods Oral Histories',NULL,NULL,NULL);";
-
-if ($conn->query($query) === TRUE) {
-    echo "Data Inserted into The W Table";
-} else {
-    echo "Error Inserting data into Table: " . $conn->error;
-}
+$conn->query($query);
 
 ?>

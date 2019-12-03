@@ -1,5 +1,6 @@
 function search(){
     var val = localStorage.getItem("searchQ");
+    document.getElementById("SearchDB").value = val;
     if(val == null){
         val = "";
     }
