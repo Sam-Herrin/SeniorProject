@@ -60,12 +60,13 @@
         href="/sites/www.basedrupal.its.msstate.edu/files/css/css_JM8HFIjIj5MT3ycx9ixhnRUoLrsjN7Qy_owVkt1sBHw.css"
         media="all" />
 
+    <script type="text/javascript" src="js/MSUsearch.js"></script>
     <script src="//cdn01.its.msstate.edu/e/modernizr/2.8.3/modernizr.min.js"></script>
     <script src="js/scripts.js"></script>
 
 </head>
 
-<body class="basedrupal  simplean ">
+<body onload="search()" class="basedrupal  simplean ">
 
     <!--[if lte IE 9]><p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->
 
@@ -232,8 +233,28 @@
                                                 <div class="col-sm-12 ">
                                                     <div id="block-block-3" class="block block-block">
                                                         <div class="content">
-                                                            <div class="jumbotron text-left">
-
+                                                            <div class="jumbotron text-center">
+                                                                <h2>Repertorium Chronicarum</h2>
+                                                                
+                                                                <div class="row search hidden-xs">
+                                                                    <div class="col-sm-12">
+                                                                        
+                                                                        <label class="sr-only"
+                                                                            for="search-terms">Search
+                                                                            MSSTATE</label>
+                                                                        <input id="SearchDB"
+                                                                            class="form-control" name="terms"
+                                                                            placeholder="Search Repertorium Chronicarum"
+                                                                            type="text" style="display: inline; width: 85%">
+                                                                        <button onclick="MSURedir()"
+                                                                            title="Search" style="display:inline; height: 34px; width: 5%;">
+                                                                            <i class="glyphicon glyphicon-search">
+                                                                                <span class="sr-only">Search</span>
+                                                                            </i>
+                                                                        </button>
+                                                                        
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
