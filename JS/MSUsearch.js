@@ -1,13 +1,13 @@
 function search(){
     var val = localStorage.getItem("searchQ");
-    document.getElementById("SearchDB").value = val;
+ document.getElementById("SearchDB").value = val;
     if(val == null){
         val = "";
     }
     var req = new XMLHttpRequest();
     req.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200){
-            document.getElementById("content-body").innerHTML = this.responseText
+         document.getElementById("content-body").innerHTML = this.responseText
             addRowHandlers();
         }
     };
@@ -21,7 +21,7 @@ function FreshSearch(){
 }
 
 function MSURedir(){
-    localStorage.setItem("searchQ",document.getElementById("SearchDB").value);
+    localStorage.setItem("searchQ", document.getElementById("SearchDB").value);
     window.location = "http://localhost/seniorproject/browse.html";
 }
 
@@ -40,15 +40,14 @@ function showDetails(column){
     window.location = "http://localhost/seniorproject/MSUdetails.html";
 }
 
-function msstateDetails(){
-    var document = localStorage.getItem("msuColumn");
+function viewDetails(){
+    var record = localStorage.getItem("msuColumn");
     var req = new XMLHttpRequest();
     req.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200){
-            alert(this.responseText);
             document.getElementById("details").innerHTML = this.responseText;
         }
     };
-    req.open("GET", "php/showMSUDetails.php?q=" + document, true);
+    req.open("GET", "php/showMSUDetails.php?q=" + record, true);
     req.send();
 }
