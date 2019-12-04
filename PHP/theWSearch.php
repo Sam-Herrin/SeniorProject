@@ -12,7 +12,7 @@ if(!$result){
 
 if(mysqli_num_rows($result) != 0){
     echo "<table id='resTable' style='width: 80%; text-align: center; margin-left: auto; margin-right: auto'>
-    <tr style='color: #174074; font-size: 20px'>
+    <tr style='color: #174074; font-size: 20px;'>
         <th>Collection Title</th>
         <th>Institution</th>
         <th>Dates</th>
@@ -32,7 +32,7 @@ if(mysqli_num_rows($result) != 0){
         }
 
         echo "
-        <tr style='height: 100px' onclick='alert('Yeet')'>
+        <tr style='height: 100px'>
             <td>" . $row['CollectionTitle'] . "</td>
             <td>" . $row['Institution'] . "</td>
             <td>" . $dates . "</td>
