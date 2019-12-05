@@ -1,10 +1,11 @@
 <?php
 
 $val = $_REQUEST["q"];
+$cat = $_REQUEST["cat"];
 
 $conn = new mysqli("localhost", "root", "", "seniorProject");
 
-$query = "SELECT * FROM theW WHERE CollectionTitle LIKE '%" . $val . "%';";
+$query = "SELECT * FROM theW WHERE " . $cat . " LIKE '%" . $val . "%';";
 $result = $conn->query($query);
 if(!$result){
     echo "<h2 style='text-align:center;'>No Results Matching Search<h2>";

@@ -1,19 +1,22 @@
 function search(){
-    var val = localStorage.getItem("searchVal");
+    var val = sessionStorage.getItem("searchVal");
+    var cat = sessionStorage.getItem("category");
+    document.getElementById("searchbox").value = val;
+    document.getElementById(cat).selected = true;
     var req = new XMLHttpRequest();
     req.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200){
-            document.getElementById("searchbox").value = val;
             document.getElementById("resultsTable").innerHTML = this.responseText
             addRowHandlers();
         }
     };
-    req.open("GET", "http://localhost/seniorproject/php/theWSearch.php?q=" + val, true);
+    req.open("GET", "http://localhost/seniorproject/php/theWSearch.php?q=" + val + "&cat=" + cat, true);
     req.send();
 }
 
 function redir(){
-    localStorage.setItem("searchVal", document.getElementById("searchbox").value);
+    sessionStorage.setItem("searchVal", document.getElementById("searchbox").value);
+    sessionStorage.setItem("category", document.getElementById("category").value);
     window.location = "http://localhost/seniorproject/Wresults.html";
 }
 
@@ -28,12 +31,12 @@ function addRowHandlers() {
 }
 
 function viewDetails(collTitle){
-    localStorage.setItem("item", collTitle);
+    sessionStorage.setItem("item", collTitle);
     window.location = "http://localhost/seniorproject/Wdetails.html";
 }
 
 function displayDetails(){
-    var record = localStorage.getItem("item");
+    var record = sessionStorage.getItem("item");
     var req = new XMLHttpRequest();
     req.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200){

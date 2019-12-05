@@ -66,7 +66,7 @@ $query = "INSERT INTO msstate(ID,LibraryName,City,Country,Website,ManuscriptName
 $conn->query($query);
 $query = "INSERT INTO msstate(ID,LibraryName,City,Country,Website,ManuscriptName,Author,BirthDate,DeathDate,Notes,OorC) VALUES(9,'Newberry Library','Chicago','United States of America',NULL,'Abbreviationes Chronicorum','Unknown',NULL,NULL,'None','Copy');";
 $conn->query($query);
-$query = "INSERT INTO msstate(ID,LibraryName,City,Country,Website,ManuscriptName,Author,BirthDate,DeathDate,Notes,OorC) VALUES(10,'Universitäts und Landesbibliothek','Halle','Germany',NULL,'Bita Heinrici II Imperatoris','Adalboldus Utraiectensis',695,1580,'None','Original');";
+$query = "INSERT INTO msstate(ID,LibraryName,City,Country,Website,ManuscriptName,Author,BirthDate,DeathDate,Notes,OorC) VALUES(10,'Universitäts und Landesbibliothek','Halle','Germany',NULL,'Vita Heinrici II Imperatoris','Adalboldus Utraiectensis',695,1580,'None','Original');";
 $conn->query($query);
 
 $query = "INSERT INTO theW(ID,Institution,CollectionTitle,InstCollNum,InclusiveDates,Extent,SubjectHeadings,Descriptions,Link,Notes) VALUES (1,'Jackson State University - Margaret Walker Center','Adrienne, Alberta Collection','AF 043','1970s','1 linear foot','African American History','This collection consists of printed materials, newspapers, and magazines detailing the events that took place during the 1970s at Jackson State College. It also contains humanities course teaching material.','http://www.jsums.edu/margaretwalkercenter/files/2013/03/adrienne.pdf',NULL);";

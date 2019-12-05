@@ -1,6 +1,8 @@
 function search(){
-    var val = localStorage.getItem("searchQ");
- document.getElementById("SearchDB").value = val;
+    var val = sessionStorage.getItem("searchQ");
+    var cat = sessionStorage.getItem("category");
+    document.getElementById("SearchDB").value = val;
+    document.getElementById(cat).selected = true;
     if(val == null){
         val = "";
     }
@@ -11,17 +13,18 @@ function search(){
             addRowHandlers();
         }
     };
-    req.open("GET", "php/msstateSearch.php?q=" + val, true);
+    req.open("GET", "php/msstateSearch.php?q=" + val + "&cat=" + cat, true);
     req.send();
 }
 
 function FreshSearch(){
-    localStorage.clear("searchQ");
+    sessionStorage.clear("searchQ");
     window.location = "http://localhost/seniorproject/browse.html";
 }
 
 function MSURedir(){
-    localStorage.setItem("searchQ", document.getElementById("SearchDB").value);
+    sessionStorage.setItem("searchQ", document.getElementById("SearchDB").value);
+    sessionStorage.setItem("category", document.getElementById("category").value);
     window.location = "http://localhost/seniorproject/browse.html";
 }
 
@@ -36,18 +39,38 @@ function addRowHandlers() {
 }
 
 function showDetails(column){
-    localStorage.setItem("msuColumn",column);
+    sessionStorage.setItem("msuColumn",column);
     window.location = "http://localhost/seniorproject/MSUdetails.html";
 }
 
 function viewDetails(){
-    var record = localStorage.getItem("msuColumn");
-    var req = new XMLHttpRequest();
-    req.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200){
-            document.getElementById("details").innerHTML = this.responseText;
-        }
-    };
-    req.open("GET", "php/showMSUDetails.php?q=" + record, true);
-    req.send();
+    var val = sessionStorage.getItem("searchQ");
+    var cat = sessionStorage.getItem("category");
+    document.getElementById("SearchDB").value = val;
+    document.getElementById(cat).selected = true;
+    if(sessionStorage.getItem("msuColumn") != null){
+        var record = sessionStorage.getItem("msuColumn");
+        var req = new XMLHttpRequest();
+        req.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200){
+                document.getElementById("details").innerHTML = this.responseText;
+            }
+        };
+        req.open("GET", "php/showMSUDetails.php?q=" + record, true);
+        req.send();
+    }else{
+        document.getElementById("details").innerHTML = "<h2>Error: Please go back</h2>"
+    }
+}
+
+function otherCopies(){
+    var record = sessionStorage.getItem("msuColumn");
+        var req = new XMLHttpRequest();
+        req.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200){
+                document.getElementById("otherCopies").innerHTML = this.responseText;
+            }
+        };
+        req.open("GET", "php/otherCopies.php?q=" + record, true);
+        req.send();
 }

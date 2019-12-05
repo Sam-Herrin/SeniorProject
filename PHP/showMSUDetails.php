@@ -4,7 +4,7 @@ $record = $_REQUEST['q'];
 
 $conn = new mysqli("localhost", "root", "", "seniorProject");
 
-$query = "SELECT * FROM msstate WHERE ManuscriptName = '" . $record . "' LIMIT 1;";
+$query = "SELECT * FROM msstate WHERE ID = '" . $record . "' LIMIT 1;";
 $result = $conn->query($query);
 if(!$result){
     echo "<h2 style='text-align:center;'>No Results Matching Search<h2>";
@@ -30,13 +30,13 @@ if($row['Website'] == NULL){
 
 
 echo "
+<h4>ID: </h4><p>" . $row['ID'] . "</p>
 <h4>Manuscript Name: </h4><p>" . $row['ManuscriptName'] . "</p>
 <h4>Library Name: </h4><p>" . $row['LibraryName'] . "</p>
 <h4>Location: </h4><p>" . $row['City'] . ", " . $row['Country'] . "</p>
 <h4>Website: </h4><p>" . $link . "</p>
 <h4>Author: </h4><p>" . $row['Author'] . "</p>
-<h4>Birth Date: </h4><p>" . $BDate . "</p>
-<h4>Death Date: </h4><p>" . $DDate . "</p>
+<h4>Birth and Death: </h4><p>" . $BDate . "-" . $DDate . "</p>
 <h4>Notes: </h4><p>" . $row['Notes'] . "</p>
 <h4>Original or Copy: </h4><p>" . $row['OorC'] . "</p>
 ";
