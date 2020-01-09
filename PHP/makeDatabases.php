@@ -48,9 +48,9 @@ Notes varchar(255)
 )";
 $conn->query($table);
 
-$query = "INSERT INTO msstate(ID,LibraryName,City,Country,Website,ManuscriptName,Author,BirthDate,DeathDate,Notes,OorC) VALUES(1,'Burgerbibliothek','Bern','Switzerland',NULL,'Epitoma de Pontificibus Romanis','Abbo Floriacensis',945,1004,'None','Original');";
+$query = "INSERT INTO msstate(ID,LibraryName,City,Country,Website,ManuscriptName,Author,BirthDate,DeathDate,Notes,OorC) VALUES(1,'Burgerbibliothek','Bern','Switzerland',NULL,'Epitomą de Pontificibus Romanis','Abbo Floriacensis',945,1004,'None','Original');";
 $conn->query($query);
-$query = "INSERT INTO msstate(ID,LibraryName,City,Country,Website,ManuscriptName,Author,BirthDate,DeathDate,Notes,OorC) VALUES(2,'Universiteitsbibiotheek','Leiden','Netherlands',NULL,'Epitoma de Pontificibus Romanis','Abbo Floriacensis',945,1004,'None','Copy');";
+$query = "INSERT INTO msstate(ID,LibraryName,City,Country,Website,ManuscriptName,Author,BirthDate,DeathDate,Notes,OorC) VALUES(2,'Universiteitsbibiotheek','Leiden','Netherlands',NULL,'Epitomą de Pontificibus Romanis','Abbo Floriacensis',945,1004,'None','Copy');";
 $conn->query($query);
 $query = "INSERT INTO msstate(ID,LibraryName,City,Country,Website,ManuscriptName,Author,BirthDate,DeathDate,Notes,OorC) VALUES(3,'Bibliothèque Nationale','Paris','France',NULL,'Bella Parisiacae urbis','Abbo of St. Germain',850,925,'None','Copy');";
 $conn->query($query);

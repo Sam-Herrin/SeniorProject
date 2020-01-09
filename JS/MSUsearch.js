@@ -1,8 +1,12 @@
 function search(){
     var val = sessionStorage.getItem("searchQ");
-    var cat = sessionStorage.getItem("category");
+    var cat = sessionStorage.getItem("searchCat");
+    if(cat != null){
+        document.getElementById(cat).selected = true;
+    }else{
+        cat = "ManuscriptName";
+    }
     document.getElementById("SearchDB").value = val;
-    document.getElementById(cat).selected = true;
     if(val == null){
         val = "";
     }
@@ -19,12 +23,13 @@ function search(){
 
 function FreshSearch(){
     sessionStorage.clear("searchQ");
+    sessionStorage.clear("searchCat");
     window.location = "http://localhost/seniorproject/browse.html";
 }
 
 function MSURedir(){
     sessionStorage.setItem("searchQ", document.getElementById("SearchDB").value);
-    sessionStorage.setItem("category", document.getElementById("category").value);
+    sessionStorage.setItem("searchCat", document.getElementById("category").value);
     window.location = "http://localhost/seniorproject/browse.html";
 }
 
@@ -45,9 +50,13 @@ function showDetails(column){
 
 function viewDetails(){
     var val = sessionStorage.getItem("searchQ");
-    var cat = sessionStorage.getItem("category");
+    var cat = sessionStorage.getItem("searchCat");
     document.getElementById("SearchDB").value = val;
-    document.getElementById(cat).selected = true;
+    if(cat != null){
+        document.getElementById(cat).selected = true;
+    }else{
+        cat = "ManuscriptName";
+    }
     if(sessionStorage.getItem("msuColumn") != null){
         var record = sessionStorage.getItem("msuColumn");
         var req = new XMLHttpRequest();
