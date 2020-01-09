@@ -1,3 +1,6 @@
+//  Senior Design Fall 2019
+
+//Function for searching the database.
 function search(){
     var val = sessionStorage.getItem("searchQ");
     var cat = sessionStorage.getItem("searchCat");
@@ -21,18 +24,21 @@ function search(){
     req.send();
 }
 
+// This function calls the page for a fresh search, with just the search bar showing.
 function FreshSearch(){
     sessionStorage.clear("searchQ");
     sessionStorage.clear("searchCat");
     window.location = "http://localhost/seniorproject/browse.html";
 }
 
+// This function redirects to a browse page based off of a search.
 function MSURedir(){
     sessionStorage.setItem("searchQ", document.getElementById("SearchDB").value);
     sessionStorage.setItem("searchCat", document.getElementById("category").value);
     window.location = "http://localhost/seniorproject/browse.html";
 }
 
+// This function shows adds handlers to rows in the table.
 function addRowHandlers() {
     var row = document.getElementById("MSUTable").rows;
     for (i = 0; i < row.length; i++) {
@@ -43,11 +49,13 @@ function addRowHandlers() {
     }
 }
 
+// This function shows the details column.
 function showDetails(column){
     sessionStorage.setItem("msuColumn",column);
     window.location = "http://localhost/seniorproject/MSUdetails.html";
 }
 
+// Function for viewing details.
 function viewDetails(){
     var val = sessionStorage.getItem("searchQ");
     var cat = sessionStorage.getItem("searchCat");
@@ -57,6 +65,7 @@ function viewDetails(){
     }else{
         cat = "ManuscriptName";
     }
+    
     if(sessionStorage.getItem("msuColumn") != null){
         var record = sessionStorage.getItem("msuColumn");
         var req = new XMLHttpRequest();
@@ -72,6 +81,7 @@ function viewDetails(){
     }
 }
 
+//This function shows whether or not there are other copies in the database.
 function otherCopies(){
     var record = sessionStorage.getItem("msuColumn");
         var req = new XMLHttpRequest();
