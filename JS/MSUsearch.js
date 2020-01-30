@@ -66,12 +66,15 @@ function viewDetails(){
         cat = "ManuscriptName";
     }
     
+    alert(sessionStorage.getItem("msuColumn").value)
+
     if(sessionStorage.getItem("msuColumn") != null){
         var record = sessionStorage.getItem("msuColumn");
         var req = new XMLHttpRequest();
         req.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200){
                 document.getElementById("details").innerHTML = this.responseText;
+                var location = document.getElementById("loc");
             }
         };
         req.open("GET", "php/showMSUDetails.php?q=" + record, true);
@@ -79,6 +82,16 @@ function viewDetails(){
     }else{
         document.getElementById("details").innerHTML = "<h2>Error: Please go back</h2>"
     }
+    var mymap = L.map('map').setView([51.505, -0.09]);
+    alert("Before Tile Layer");
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox/streets-v11',
+    accessToken: 'pk.eyJ1IjoiY29ucmFkMjA5OCIsImEiOiJjazU2d20zMnYwYWF4M2xtb2tjcnA4MzV3In0.Jrgm-pFb_Z1xCAkTHht7gw'
+    }).addTo(mymap);
+    alert("After Tile Layer");
+
 }
 
 //This function shows whether or not there are other copies in the database.
