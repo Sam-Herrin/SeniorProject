@@ -4,26 +4,11 @@
 
 <head>
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
-        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-        crossorigin="" />
-    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
-        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
-        crossorigin=""></script>
 
-    <!-- Global Site Tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124736054-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-124736054-1');
-        gtag('config', 'UA-124736054-2');
-    </script>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.mapbox.com/mapbox.js/v3.2.1/mapbox.js'></script>
+    <link href='https://api.mapbox.com/mapbox.js/v3.2.1/mapbox.css' rel='stylesheet' />
+            
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="shortcut icon"
         href="https://www.basedrupal.its.msstate.edu/sites/www.basedrupal.its.msstate.edu/themes/basedrupal/favicon.ico"
@@ -67,14 +52,14 @@
         href="/sites/www.basedrupal.its.msstate.edu/files/css/css_JM8HFIjIj5MT3ycx9ixhnRUoLrsjN7Qy_owVkt1sBHw.css"
         media="all" />
 
-    <script type="text/javascript" src="js/MSUMap.js"></script>
     <script type="text/javascript" src="js/MSUsearch.js"></script>
     <script src="//cdn01.its.msstate.edu/e/modernizr/2.8.3/modernizr.min.js"></script>
     <script src="js/scripts.js"></script>
+    <!--<script type="text/javascript" src="js/MSUMap.js"></script>-->
 
 </head>
 
-<body onload="viewDetails(); otherCopies(); MapBuild();" class="basedrupal  simplean ">
+<body onload="viewDetails(); otherCopies();" class="basedrupal  simplean ">
 
     <!--[if lte IE 9]><p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->
 
@@ -226,12 +211,18 @@
 
                 <div id="otherCopies">
                 </div>
-                
-                <br></br>
 
                 <h2>Map</h2>
-                <div id="map">
-                </div>
+                <div id="map" style="height:293.5px;width:293.5"></div>
+                <style>
+                </style>
+                <script>
+                L.mapbox.accessToken = 'pk.eyJ1IjoiY29ucmFkMjA5OCIsImEiOiJjazZzZXFpNzgwNWhzM2VwYXVjaW9tN2xnIn0.eU01W6R5fxOZQFsmKcdy_A';
+                var map = L.mapbox.map('map')
+                .setView([40, -74.50], 9)
+                .addLayer(L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v11'));
+                </script>
+
             </div>
 
             <div class="container-fluid clearfix">
@@ -423,54 +414,6 @@
     <script type="text/javascript" src="//cdn01.its.msstate.edu/i/basedrupal/1.0.5/js/options.js"></script>
     <script type="text/javascript"
         src="/sites/www.basedrupal.its.msstate.edu/files/js/js_l2zt3M4lk8gM6Vr1VTbSP0ZvWYifBUjEqT49GeNrG4E.js"></script>
-    <script type="text/javascript">
-        jQuery.extend(Drupal.settings, {
-            "basePath": "\/",
-            "pathPrefix": "",
-            "ajaxPageState": {
-                "theme": "basedrupal",
-                "theme_token": "2Gzda97iLmXHImqqnpD1HwVzjgNdrTAKfTM_tB49ekM",
-                "js": {
-                    "misc\/jquery.js": 1,
-                    "\/\/cdn01.its.msstate.edu\/e\/jquery-migrate\/1.4.1\/jquery-migrate.min.js": 1,
-                    "misc\/jquery-extend-3.4.0.js": 1,
-                    "misc\/jquery.once.js": 1,
-                    "misc\/drupal.js": 1,
-                    "\/\/cdn01.its.msstate.edu\/i\/emergency\/1.4\/hazard.js": 1,
-                    "\/\/cdn01.its.msstate.edu\/e\/bootstrap\/3.3.7\/js\/bootstrap.min.js": 1,
-                    "\/\/cdn01.its.msstate.edu\/e\/slick\/1.6.0\/slick.min.js": 1,
-                    "\/\/cdn01.its.msstate.edu\/i\/basedrupal\/1.0.5\/js\/base.js": 1,
-                    "\/\/cdn01.its.msstate.edu\/i\/basedrupal\/1.0.5\/js\/options.js": 1,
-                    "sites\/www.basedrupal.its.msstate.edu\/themes\/basedrupal\/js\/app.js": 1
-                },
-                "css": {
-                    "modules\/system\/system.base.css": 1,
-                    "modules\/system\/system.menus.css": 1,
-                    "modules\/system\/system.messages.css": 1,
-                    "modules\/system\/system.theme.css": 1,
-                    "modules\/comment\/comment.css": 1,
-                    "sites\/all\/modules\/date\/date_api\/date.css": 1,
-                    "sites\/all\/modules\/date\/date_popup\/themes\/datepicker.1.7.css": 1,
-                    "modules\/field\/theme\/field.css": 1,
-                    "modules\/node\/node.css": 1,
-                    "modules\/search\/search.css": 1,
-                    "modules\/user\/user.css": 1,
-                    "sites\/all\/modules\/views\/css\/views.css": 1,
-                    "sites\/all\/modules\/ctools\/css\/ctools.css": 1,
-                    "\/\/cdn01.its.msstate.edu\/e\/normalize\/3.0.3\/normalize.css": 1,
-                    "\/\/cdn01.its.msstate.edu\/e\/h5bp\/5.2.0\/h5bp.css": 1,
-                    "\/\/cdn01.its.msstate.edu\/e\/bootstrap\/3.3.7\/css\/bootstrap.min.css": 1,
-                    "\/\/cdn01.its.msstate.edu\/e\/slick\/1.6.0\/slick.css": 1,
-                    "\/\/cdn01.its.msstate.edu\/e\/slick\/1.6.0\/slick-theme.css": 1,
-                    "\/\/cdn01.its.msstate.edu\/i\/social-icons\/1.1.0\/css\/social-icons.css": 1,
-                    "\/\/cdn01.its.msstate.edu\/i\/basedrupal\/1.0.5\/css\/base.css": 1,
-                    "\/\/cdn01.its.msstate.edu\/i\/basedrupal\/1.0.5\/css\/chevron.css": 1,
-                    "\/\/cdn01.its.msstate.edu\/i\/basedrupal\/1.0.5\/css\/truebulldog.css": 1,
-                    "sites\/www.basedrupal.its.msstate.edu\/themes\/basedrupal\/css\/app.css": 1
-                }
-            }
-        });
-    </script>
 
 </body>
 
