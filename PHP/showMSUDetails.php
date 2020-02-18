@@ -33,7 +33,7 @@ echo "
 <h4>ID: </h4><p>" . $row['ID'] . "</p>
 <h4>Manuscript Name: </h4><p>" . $row['ManuscriptName'] . "</p>
 <h4>Library Name: </h4><p>" . $row['LibraryName'] . "</p>
-<h4>Location: </h4><p id='loc'>" . $row['City'] . ", " . $row['Country'] . "</p><div id='map' style='height: 360px; width: 360px'></div>
+<h4>Location: </h4><p id='loc'>" . $row['City'] . ", " . $row['Country'] . "</p>
 <h4>Website: </h4><p>" . $link . "</p>
 <h4>Author: </h4><p>" . $row['Author'] . "</p>
 <h4>Birth and Death: </h4><p>" . $BDate . "-" . $DDate . "</p>
