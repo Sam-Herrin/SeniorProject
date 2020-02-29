@@ -59,7 +59,7 @@
 
 </head>
 
-<body onload="viewDetails(); otherCopies();" class="basedrupal  simplean ">
+<body onload="viewDetails(); otherCopies(); loadMap();" class="basedrupal  simplean ">
 
     <!--[if lte IE 9]><p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->
 
@@ -200,7 +200,7 @@
         <div id="page" class="page">
 
             <div id="sidebar" class="jumbotron"
-                style="display: inline-block;min-height: 174.4px;min-width: 17%;right: 0;float: right;margin-right: 20px;text-align: center;">
+                style="display: inline-block;min-height: 174.4px;max-width: 330px;right: 0;float: right;margin-right: 20px;text-align: center;">
                 <h2>Other Instances</h2><br>
                 <style>
                     p:hover {
@@ -213,15 +213,9 @@
                 </div>
 
                 <h2>Map</h2>
-                <div id="map" style="height:293.5px;width:293.5"></div>
-                <style>
-                </style>
-                <script>
-                L.mapbox.accessToken = 'pk.eyJ1IjoiY29ucmFkMjA5OCIsImEiOiJjazZzZXFpNzgwNWhzM2VwYXVjaW9tN2xnIn0.eU01W6R5fxOZQFsmKcdy_A';
-                var map = L.mapbox.map('map')
-                .setView([40, -74.50], 9)
-                .addLayer(L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v11'));
-                </script>
+                <div id="map" style="height:500px;width:300px"></div>
+                
+                
 
             </div>
 

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>Map to Test on</title>
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<script src='https://api.mapbox.com/mapbox.js/v3.2.1/mapbox.js'></script>
+<link href='https://api.mapbox.com/mapbox.js/v3.2.1/mapbox.css' rel='stylesheet' />
+<style>
+  body { margin:0; padding:0; }
+  #map { position:absolute; top:0; bottom:0; width:100%; }
+</style>
+</head>
+<body>
+
+<div id='map'></div>
+<div>
+  <p id="name">Epitomą de Pontificibus Romanis</p>
+  <p id="lib">Bibliothek</p>
+  <p id="loc">Bern, Switzerland</p>
+  </div>
+<script>
+
+L.mapbox.accessToken = 'pk.eyJ1IjoiY29ucmFkMjA5OCIsImEiOiJjazU2d2c0bDgwOXRnM25wa3owM2tubjgyIn0.h58Ce7phnlgqh5Ld6YN8yg';
+var geocoder = L.mapbox.geocoder('mapbox.places');
+
+var name = "" + document.getElementById('name').innerHTML +  "";
+var loc = "" + document.getElementById('lib').innerHTML + ", " + document.getElementById('loc').innerHTML + "";
+
+var map = L.mapbox.map('map')
+    .addLayer(L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v11'))
+    .addControl(L.mapbox.geocoderControl('mapbox.places', {
+      autocomplete: true
+  }));
+
+geocoder.query(loc, showMap);
+
+function showMap(err, data) {
+
+    if (data.lbounds) {
+        map.fitBounds(data.lbounds);
+    } else if (data.latlng) {
+        L.marker([data.latlng[0], data.latlng[1]]).addTo(map)
+        .bindPopup('<h>' + name + '</h><p>' + loc + '</p>')
+        .openPopup();
+        
+        map.setView([data.latlng[0], data.latlng[1]], 15);
+    }
+}
+</script>
+
+</body>
+</html>
+

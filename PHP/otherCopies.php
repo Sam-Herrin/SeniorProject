@@ -20,10 +20,12 @@ $results = $conn->query($query);
 if(mysqli_num_rows($results) == 0){
     echo "<p>No other Instances</p>";
 }else{
+    $x = 1;
     while($rows = mysqli_fetch_array($results, MYSQLI_ASSOC)){
         echo "
-            <p onclick='showDetails(" . $rows['ID'] . ")'>" . $rows['ID'] . ". " . $rows['City'] . ", " . $rows['Country'] . "</p>
+            <p onclick='showDetails(" . $rows['ID'] . ")' id='" . $x . "'>" . $rows['ID'] . ". " . $rows['LibraryName'] . ", " . $rows['City'] . ", " . $rows['Country'] . "</p>
         ";
+        $x = $x + 1;
     }
 }
 
