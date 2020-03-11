@@ -100,11 +100,16 @@ function loadMap(){
     L.mapbox.accessToken = 'pk.eyJ1IjoiY29ucmFkMjA5OCIsImEiOiJjazU2d2c0bDgwOXRnM25wa3owM2tubjgyIn0.h58Ce7phnlgqh5Ld6YN8yg';
     var geocoder = L.mapbox.geocoder('mapbox.places');
 
+    var name = "" + document.getElementById('name').innerHTML +  "";
+    var loc = "" + document.getElementById('lib').innerHTML + ", " + document.getElementById('loc').innerHTML + "";
+
     var map = L.mapbox.map('map')
         .addLayer(L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v11'))
         .addControl(L.mapbox.geocoderControl('mapbox.places', {
         autocomplete: true
     }));
+
+    geocoder.query(loc, showMap);
 
     var count = document.getElementById("otherCopies").childElementCount;
     var regex = /[0-9]. /;
@@ -113,14 +118,9 @@ function loadMap(){
         var preParse = document.getElementById("" + i + "").innerHTML;
         var res = preParse.split(regex);
         res = res[1].slice(0)
-        var loc = res
+        loc = res
         geocoder.query(res, showMap)
     }
-
-    var name = "" + document.getElementById('name').innerHTML +  "";
-     loc = "" + document.getElementById('lib').innerHTML + ", " + document.getElementById('loc').innerHTML + "";
-
-    geocoder.query(loc, showMap);
 
     function showMap(err, data) {
 

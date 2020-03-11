@@ -124,17 +124,19 @@
 
                         <div class="row">
 
-                            <div class="col-sm-6 logo">
-                                <div class="links-container">
+                            <div class="col-sm-6 logo" style="width: 900px; display: flex;">
+                                <div class="links-container" style="width: 50%;">
+                                    <a class="site-link"><img src="./Images/Warsaw.png" style="width: 100%;" /></a></div>
+                                <div class="links-container" style="width: 50%;">
                                     <a class="msu-link" href="https://www.msstate.edu/"
                                         title="Mississippi State University">Mississippi State University</a>
                                     <a class="site-link" href="http://lib.msstate.edu/"
-                                        title="Mississippi State Library"><img src="./HORIZONTAL_PRINT_white.jpg"
-                                            alt="Mississippi State Library" title="Mississippi State Library" /></a>
+                                        title="Mississippi State Library"><img src="./Images/HORIZONTAL_PRINT_white.jpg"
+                                            alt="Mississippi State Library" title="Mississippi State Library" style="width: 100%;"/></a>
                                 </div>
                             </div>
 
-                            <div class="col-sm-6">
+                            <div class="col-sm-6" style="width: 300px">
 
                                 <div class="row secondary hidden-xs">
                                     <div class="col-sm-12">
@@ -149,31 +151,33 @@
                                                         href="https://www.msstate.edu/newsroom/">News</a></li>
                                             </ul>
                                         </div>
+                                    </div>
+                                </div>
 
-                                        <div class="row search hidden-xs">
-                                            <div class="col-sm-12">
+                                <div class="row search hidden-xs">
+                                    <div class="col-sm-12">
 
-                                                <form class="search-form" role="search"
-                                                    action="https://www.msstate.edu/site-index/" method="get">
-                                                    <label for="search-terms" class="sr-only">Search MSSTATE</label>
-                                                    <button type="submit" class="form-control" title="Search">
-                                                        <i class="glyphicon glyphicon-search"><span
-                                                                class="sr-only">Search</span></i>
-                                                    </button>
-                                                    <input class="form-control" id="search-terms" name="terms"
-                                                        placeholder="Search MSSTATE" type="text">
-                                                </form>
-
-                                            </div>
-                                        </div>
+                                        <form class="search-form" role="search"
+                                            action="https://www.msstate.edu/site-index/" method="get" style="width: 90%;">
+                                            <label for="search-terms" class="sr-only">Search MSSTATE</label>
+                                            <button type="submit" class="form-control" title="Search">
+                                                <i class="glyphicon glyphicon-search"><span
+                                                        class="sr-only">Search</span></i>
+                                            </button>
+                                            <input class="form-control" id="search-terms" name="terms"
+                                                placeholder="Search MSSTATE" type="text">
+                                        </form>
 
                                     </div>
-
                                 </div>
 
                             </div>
+
                         </div>
+
                     </div>
+                </div>
+            </div>
 
         </header>
         <!-- /header -->
@@ -187,12 +191,12 @@
                         <div class="menu-container alter-bootstrap-dropdown ">
                             <ul class="menu nav navbar-nav">
                                 <ul class="menu nav navbar-nav">
-                                    <li class="first leaf active"><a href="./msstateDrupal.html" title=""
-                                            class="active">Home</a></li>
+                                    <li class="first leaf"><a href="./msstateDrupal.html" title="">Home</a></li>
                                     <li class="leaf"><a href="./objectives.html">Objectives</a></li>
                                     <li class="leaf"><a href="#" onclick="FreshSearch()">Browse</a></li>
                                     <li class="leaf"><a href="./volunteers.html">Volunteers</a></li>
-                                    <li class="last leaf"><a href="./aboutUs.html">About Us</a></li>
+                                    <li class="leaf"><a href="./aboutUs.html">About Us</a></li>
+                                    <li class="last leaf active"><a href="./login.html">Login</a></li>
                                 </ul>
                             </ul>
                         </div>
@@ -234,18 +238,18 @@
                                                     <div id="block-block-3" class="block block-block">
                                                         <div class="content">
                                                             <div class="jumbotron text-center">
-                                                                <h1>Enter Username</h1>
+                                                                <h2>Sign In</h2>
                                                                 <input id = "loginName" class="form-control" name="loginUser"
-                                                                type="text" style="display:inline; width: 69%"placeholder="Username"></input>
-                                                                <h1>Enter Password</h1> 
+                                                                type="text" style="display:inline; width: 25%"placeholder="Username" minlength="3" maxlength="25"></input>
                                                                 <input id = "password" class="form-control" name="userPassword"
-                                                                type="password" style="display:inline; width: 69%"placeholder="Password"></input><br><br>
+                                                                type="password" style="display:inline; width: 25%"placeholder="Password" minlength="5" maxlength="52"></input><br><br>
                                                                 
                                                                         </select>
                                                                         <button id="login">
-                                                                            Submit
+                                                                            Login
                                                                         </button>
-                                                                            
+                                                                        <button onclick="location.href = './CreateUser.html';">
+                                                                            Create Account
                                                                         </button>
                                                                         
                                                                     </div>
