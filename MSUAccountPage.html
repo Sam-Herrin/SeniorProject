@@ -6,6 +6,7 @@
 
     <!-- Global Site Tag (gtag.js) - Google Analytics -->
     <script type="text/javascript" src="js/MSUsearch.js"></script>
+    <script type="text/javascript" src="js/MSUUser.js"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124736054-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -63,7 +64,6 @@
 
     <script src="//cdn01.its.msstate.edu/e/modernizr/2.8.3/modernizr.min.js"></script>
     <script src="js/scripts.js"></script>
-    <script src="./JS/MSUUser.js"></script>
 
 </head>
 
@@ -102,10 +102,9 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="menu nav navbar-nav">
                     <li class="first leaf active"><a href="/" title="" class="active">Home</a></li>
-                    <li class="leaf"><a href="./objectives.html">Objectives</a></li>
-                    <li class="leaf active"><a href="#" onclick="FreshSearch()">Browse</a></li>
-                    <li class="leaf"><a href="./volunteers.html">Volunteers</a></li>
-                    <li class="last leaf"><a href="./aboutUs.html">About Us</a></li>
+                    <li class="leaf"><a href="/download/">Download</a></li>
+                    <li class="leaf"><a href="/options/">Options</a></li>
+                    <li class="last leaf"><a href="/cdn/">CDN</a></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -197,7 +196,7 @@
                                     <li class="leaf"><a href="#" onclick="FreshSearch()">Browse</a></li>
                                     <li class="leaf"><a href="./volunteers.html">Volunteers</a></li>
                                     <li class="leaf"><a href="./aboutUs.html">About Us</a></li>
-                                    <li class="last leaf active"><a href="./login.html">Login</a></li>
+                                    <li class="last leaf active"><a href="#">Account</a></li>
                                 </ul>
                             </ul>
                         </div>
@@ -238,18 +237,9 @@
                                                 <div class="col-sm-12 ">
                                                     <div id="block-block-3" class="block block-block">
                                                         <div class="content">
-                                                            <div class="jumbotron text-center" style="text-align: center">
-                                                                <h2>Request New Account</h2>
-                                                                <form>
-                                                                    <input type="text" id="name" name="fname" minlength="5" maxlength="40" placeholder="First and Last Names" title="Test" style="display:inline-block; height: 30px; width: 30%"><br><br>
-                                                                    <input type="text" id="password" name="pass" minlength="5" maxlength="52" placeholder="Password" style="display:inline-block; height: 30px; width: 30%"><br><br>
-                                                                    <input type="text" id="confirmPass" name="confirmPass" minlength="5" maxlength="52" placeholder="Confirm Password" style="display:inline-block; height: 30px; width: 30%"><br><br>
-                                                                    <input type="text" id="userEmail" name="userEmail" maxlength="256" placeholder="E-mail Address" style="display:inline-block; height: 30px; width: 30%"><br><br>
-                                                                    <input type="text" id="userInst" name="userUni" maxlength="256" placeholder="Institution" style="display:inline-block; height: 30px; width: 30%"><br><br>
-                                                                    <input type="button" value="Request Account" onclick="createUser()">
-                                                                </form>  
-                                                                    </div>
-                                                                </div>
+                                                            <div class="jumbotron text-left">
+                                                                <H2>Account Information</H2><br><br>
+                                                                <button onclick="logout()" class="">Logout</button>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -278,7 +268,7 @@
         </div>
         <!-- /#page -->
         <!-- footer -->
-        <footer id="msu-footer" class="msu-footer" style="bottom: 0;left: 0;right: 0;">
+        <footer id="msu-footer" class="msu-footer">
 
             <div class="container-fluid clearfix">
                 <div class="row">

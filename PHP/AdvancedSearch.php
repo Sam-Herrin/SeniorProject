@@ -1,11 +1,12 @@
 <?php
 
-$val = $_REQUEST["q"];
-$cat = $_REQUEST["cat"];
+$val1 = $_REQUEST["q"];
+$val2 = $_REQUEST["r"];
+$val3 = $_REQUEST["s"];
 
 $conn = new mysqli("localhost", "root", "", "seniorProject");
 
-$query = "SELECT * FROM theW WHERE " . $cat . " LIKE '%" . $val . "%';";
+$query = "SELECT * FROM theW WHERE CollectionTitle LIKE '%" . $val1 . "%' AND Institution LIKE '%" . $val2 . "%' AND SubjectHeadings LIKE '%" . $val3 . "%';";
 $result = $conn->query($query);
 if(!$result){
     echo "<h2 style='text-align:center;'>No Results Matching Search<h2>";

@@ -118,8 +118,8 @@ function loadMap(){
         var preParse = document.getElementById("" + i + "").innerHTML;
         var res = preParse.split(regex);
         res = res[1].slice(0)
-        loc = res
-        geocoder.query(res, showMap)
+        var loc0 = res
+        geocoder.query(res, showMap2)
     }
 
     function showMap(err, data) {
@@ -129,6 +129,19 @@ function loadMap(){
         } else if (data.latlng) {
             L.marker([data.latlng[0], data.latlng[1]]).addTo(map)
             .bindPopup('<h>' + name + '</h><p>' + loc + '</p>')
+            .openPopup();
+
+            map.setView([data.latlng[0], data.latlng[1]], 2);
+        }
+    }
+
+    function showMap2(err, data) {
+
+        if (data.lbounds) {
+            map.fitBounds(data.lbounds);
+        } else if (data.latlng) {
+            L.marker([data.latlng[0], data.latlng[1]]).addTo(map)
+            .bindPopup('<h>' + name + '</h><p>' + loc0 + '</p>')
             .openPopup();
 
             map.setView([data.latlng[0], data.latlng[1]], 2);

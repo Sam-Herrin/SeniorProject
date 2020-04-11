@@ -127,7 +127,7 @@
 
 </head>
 
-<body onload="displayDetails(); accountSwap()" class="logo-type-custom demostyle-type-customdemostyle header-type-normal mainbody-overlay-light font-family-bitter font-size-is-default menu-type-dropdownmenu menu-dropdownmenu-position-showcase-a layout-mode-responsive col12 option-com-content menu-library thew_15">
+<body onload="advSearch(); accountSwap()" class="logo-type-custom demostyle-type-customdemostyle header-type-normal mainbody-overlay-light font-family-bitter font-size-is-default menu-type-dropdownmenu menu-dropdownmenu-position-showcase-a layout-mode-responsive col12 option-com-content menu-library thew_15">
     <div id="rt-page-surround">
         <div class="rt-pagesurround-overlay">
             <div id="rt-body-surround">
@@ -199,15 +199,12 @@
                                                 <div style="margin-left: 25px; width: 100%;">
                                                     <script src="https://support.ebscohost.com/eit/scripts/ebscohostsearch.js" type="text/javascript"></script>
 
-                                                    <input style='margin: 10px;width: 66.5%' id="searchbox" name="ebscohostsearchtext" type="text" placeholder="Search..." class="textbox" />
-                                                    <select id="category" class="bigsearch-button" style="margin-right: 10px;width: 16%;display:inline;">
-                                                        <option id="CollectionTitle" value="CollectionTitle">Collection Title</option>
-                                                        <option id="Institution" value="Institution">Institution</option>
-                                                        <option id="SubjectHeadings" value="SubjectHeadings">Subject Headings</option>
-                                                    </select>
-                                                    <input style="width: 10%" type="submit" value="SEARCH" class="bigsearch-button" onclick="redir()"/>
+                                                    <input class="textbox" style='margin: 10px;width: 75%'  id="CollectionTitle" placeholder="Collection Title" type="text" value=""/>
+                                                    <input class="textbox" style='margin: 10px;width: 75%'  id="Institution"  placeholder="Institution" type="text" value=""/>
+                                                    <input class="textbox" style='margin: 10px;width: 75%'  id="SubjectHeadings" placeholder="Subject Headings" type="text" value=""/>
+                                                    <input style="width: 10%" type="submit" value="SEARCH" class="bigsearch-button" onclick="advRedir()"/>
 
-                                                    <p class="right"><a href="http://localhost/seniorproject/theW.html" class="readon">Home</a>  | <a href="http://localhost/seniorproject/AdvancedSearch.html" class="readon">Advanced Search</a> | <a href="http://libguides.muw.edu/az.php" class="readon">Databases</a> | <a href="http://localhost/seniorproject/AboutPage.html" class="readon">About</a> | <span id="swap"><a href="http://localhost/seniorproject/WLogin.html" class="readon">Login</a></span></p>
+                                                    <p class="right"><a href="http://localhost/seniorproject/theW.html" class="readon">Home</a> | <a href="http://libguides.muw.edu/az.php" class="readon">Databases</a> | <a href="http://localhost/seniorproject/AboutPage.html" class="readon">About</a> | <span id="swap"><a href="http://localhost/seniorproject/WLogin.html" class="readon">Login</a></span></p>
                                                 </div>
                                             </div>
                                         </div>
@@ -230,7 +227,15 @@
                                 <div class="custom library_search">
                                     <div style="background-color:white; margin:-15px; padding:10px;">
                                         <div style="margin:2%;">
-                                            <div id="details" style="text-align: left; padding-left: 150px; padding-top: 30px; padding-bottom: 50px;">
+										
+											<style>
+												tr:hover {background-color:#f5f5f5; cursor: pointer;}
+                                                td {color:#919191;}
+                                                th {padding-bottom: 15px;}
+											</style>
+											
+                                            <h4 style="padding-left: 100px">Search results...</h4>
+                                            <div id="resultsTable">
 											
                                             </div>
                                         </div>

@@ -4,6 +4,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript" src="js/Wsearch.js"></script>
+    <script type="text/javascript" src="js/WUser.js"></script>
     <base href="https://www.muw.edu/library" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="rights" content="©1996-2019 Mississippi University for Women" />
@@ -118,7 +119,7 @@
     <!-- End Schema.org -->
 </head>
 
-<body class="logo-type-custom demostyle-type-customdemostyle header-type-normal mainbody-overlay-light font-family-bitter font-size-is-default menu-type-dropdownmenu menu-dropdownmenu-position-showcase-a layout-mode-responsive col12 option-com-content menu-library thew_15">
+<body onload="accountSwap()" class="logo-type-custom demostyle-type-customdemostyle header-type-normal mainbody-overlay-light font-family-bitter font-size-is-default menu-type-dropdownmenu menu-dropdownmenu-position-showcase-a layout-mode-responsive col12 option-com-content menu-library thew_15">
     <div id="rt-page-surround">
         <div class="rt-pagesurround-overlay">
             <div id="rt-body-surround">
@@ -198,7 +199,7 @@
                                                     </select>
                                                     <input style="width: 10%" type="submit" value="SEARCH" class="bigsearch-button" onclick="redir()"/>
 
-                                                    <p class="right"><a href="http://libprxy.muw.edu/login?url=http://search.ebscohost.com/login.aspx?direct=true&site=eds-live&scope=site&type=1&authtype=ip,guest&custid=magn1308&groupid=main" class="readon">Advanced Search</a> | <a href="http://libguides.muw.edu/az.php" class="readon">Databases</a></p>
+                                                    <p class="right"><a href="http://localhost/seniorproject/AdvancedSearch.html" class="readon">Advanced Search</a> | <a href="http://libguides.muw.edu/az.php" class="readon">Databases</a> | <a href="http://localhost/seniorproject/AboutPage.html" class="readon">About</a> | <span id="swap"><a href="http://localhost/seniorproject/WLogin.html" class="readon">Login</a></span></p>
                                                 </div>
                                             </div>
                                         </div>
@@ -215,7 +216,7 @@
 
                 </div>
 
-                <footer id="rt-footer-surround" style="position: fixed;bottom: 0; left: 0; right: 0;">
+                <footer id="rt-footer-surround" style="bottom: 0; left: 0; right: 0;">
                     <div id="rt-bottom">
                         <div class="rt-container">
                             <div class="rt-flex-container">

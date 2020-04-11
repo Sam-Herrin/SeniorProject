@@ -14,6 +14,45 @@ function search(){
     req.send();
 }
 
+function advSearch(){
+    var val1 = sessionStorage.getItem("name");
+    var val2 = sessionStorage.getItem("inst");
+    var val3 = sessionStorage.getItem("subhead");
+
+    if(val1 == null && val2 == null && val3 == null){
+        var req = new XMLHttpRequest();
+        req.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200){
+                document.getElementById("resultsTable").innerHTML = this.responseText
+                addRowHandlers();
+            }
+        };
+        req.open("GET", "http://localhost/seniorproject/php/AdvancedSearch.php?q=&r=&s=", true);
+        req.send();
+    }else{
+        document.getElementById("CollectionTitle").value = val1;
+        document.getElementById("Institution").value = val2;
+        document.getElementById("SubjectHeadings").value = val3;
+
+        var req = new XMLHttpRequest();
+        req.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200){
+                document.getElementById("resultsTable").innerHTML = this.responseText
+                addRowHandlers();
+            }
+        };
+        req.open("GET", "http://localhost/seniorproject/php/AdvancedSearch.php?q=" + val1 + "&r=" + val2 + "&s=" + val3 , true);
+        req.send();
+    }
+}
+
+function advRedir(){
+    sessionStorage.setItem("name", document.getElementById("CollectionTitle").value);
+    sessionStorage.setItem("inst", document.getElementById("Institution").value);
+    sessionStorage.setItem("subhead", document.getElementById("SubjectHeadings").value);
+    window.location = "http://localhost/seniorproject/AdvancedSearch.html";
+}
+
 function redir(){
     sessionStorage.setItem("searchVal", document.getElementById("searchbox").value);
     sessionStorage.setItem("category", document.getElementById("category").value);

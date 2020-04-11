@@ -6,6 +6,7 @@
 
     <!-- Global Site Tag (gtag.js) - Google Analytics -->
     <script type="text/javascript" src="js/MSUsearch.js"></script>
+    <script type="text/javascript" src="js/MSUUser.js"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124736054-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -71,7 +72,7 @@
 
 </head>
 
-<body class="basedrupal  simplean ">
+<body class="basedrupal  simplean " onload="loginSwap()">
 
     <!--[if lte IE 9]><p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->
 
@@ -200,7 +201,7 @@
                                     <li class="leaf"><a href="#" onclick="FreshSearch()">Browse</a></li>
                                     <li class="leaf active"><a href="./volunteers.html">Volunteers</a></li>
                                     <li class="leaf"><a href="./aboutUs.html">About Us</a></li>
-                                    <li class="last leaf"><a href="./login.html">Login</a></li>
+                                    <li id="account" class="last leaf"><a href="./login.html">Login</a></li>
                                 </ul>
                             </ul>
                         </div>
