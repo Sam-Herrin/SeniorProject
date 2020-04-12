@@ -6,7 +6,6 @@
 
     <!-- Global Site Tag (gtag.js) - Google Analytics -->
     <script type="text/javascript" src="js/MSUsearch.js"></script>
-    <script type="text/javascript" src="js/MSUUser.js"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124736054-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -240,19 +239,16 @@
                                                         <div class="content">
                                                             <div class="jumbotron text-center">
                                                                 <h2>Sign In</h2>
-                                                                <input id = "email" class="form-control" name="loginUser"
-                                                                type="text" style="display:inline; width: 25%" placeholder="E-mail" minlength="3" maxlength="52"></input>
-                                                                <input id = "password" class="form-control" name="userPassword"
-                                                                type="password" style="display:inline; width: 25%"placeholder="Password" minlength="5" maxlength="52"></input><br><br>
-                                                                
-                                                                </select>
-                                                                <button id="login" onclick="login()">
-                                                                    Login
-                                                                </button>
-                                                                <button onclick="location.href = './CreateUser.html';">
-                                                                    Request Account
-                                                                </button>
-                                                                        
+                                                                <form action="login.php" method="post">
+                                                                    <label for="user" style="display:inline-block;">Username: </label>
+                                                                    <input type="text" id="user" name="user" style="display:inline-block;"><br>
+																	<label for="pass" style="display:inline-block;">Password: </label>
+                                                                    <input type="password" id="pass" name="pass" style="display:inline-block;"><br><br>
+																	<input type="submit" value="Login">
+                                                                </form>
+																<button onclick="location.href = './CreateUser.php';">
+																	Create Account
+																</button> 
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -283,7 +279,7 @@
         </div>
         <!-- /#page -->
         <!-- footer -->
-        <footer id="msu-footer" class="msu-footer" style="bottom: 0;left: 0;right: 0;">
+        <footer id="msu-footer" class="msu-footer" style="position: fixed; bottom: 0;left: 0;right: 0;">
 
             <div class="container-fluid clearfix">
                 <div class="row">
